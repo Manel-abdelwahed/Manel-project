@@ -1,0 +1,140 @@
+.search-bar-container {
+  position: relative;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s;
+  height: 36px;
+}
+
+.search-input-wrapper:focus-within {
+  background: white;
+  border-color: #5b5fed;
+  box-shadow: 0 0 0 3px rgba(91, 95, 237, 0.1);
+}
+
+.search-input-wrapper svg {
+  color: #999;
+  flex-shrink: 0;
+  min-width: 18px;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  min-width: 0;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item:hover {
+  background: #f8f9fa;
+}
+
+.result-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.result-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.result-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-type {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0.2rem 0 0 0;
+  text-transform: capitalize;
+}
+
+.search-loading,
+.search-empty {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .search-bar-container {
+    width: 250px;
+  }
+
+  .search-input-wrapper input::placeholder {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar-container {
+    width: 200px;
+  }
+
+  .search-input-wrapper {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .search-input-wrapper input::placeholder {
+    font-size: 0.75rem;
+  }
+}
